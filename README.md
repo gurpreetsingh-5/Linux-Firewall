@@ -16,7 +16,19 @@ firewall-cmd  --zone=public –list-all     # to get firewall rules for a specif
 
 ```
 
-#### *To add or remove a service*
+#### *To add or remove a service temporary*
 
 ```
+firewall-cmd --add-service=<name_of_service>
+firewall-cmd --remove-service=<name_of_service>
+firewall-cmd --reload # after reload add service remove autometically
+```
+
+#### *To add or remove a service parmanent*
+
+```
+firewall-cmd --add-service=<name_of_service> --parmanent
+firewall-cmd --remove-service=<name_of_service> --parmanent
+systemctl restart firewalld.service	
+
 ```

@@ -44,7 +44,7 @@ firewall-cmd --remove-port=20201/tcp
 firewall-cmd --add-rich-rule=’rule family=”ipv4” source address=”192.168.0.0” reject’
 ```
 
-#### *to block outgonig traffic from an IP or URL*
+#### *to block or unblock outgonig traffic from an IP or URL*
 
 ```
 sudo dnf install bind-utils -y

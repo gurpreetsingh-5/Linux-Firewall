@@ -39,9 +39,11 @@ firewall-cmd --add-port=20201/tcp
 firewall-cmd --remove-port=20201/tcp
 ```
 
-#### *to block incoming traffic from an IP*
+#### *to block or unblock incoming traffic from an IP*
 ```
 firewall-cmd --add-rich-rule=’rule family=”ipv4” source address=”192.168.0.0” reject’
+firewall-cmd --remove-rich-rule=’rule family=”ipv4” source address=”192.168.0.0” reject’
+
 ```
 
 #### *to block or unblock outgonig traffic from an IP or URL*

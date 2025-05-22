@@ -32,3 +32,16 @@ firewall-cmd --remove-service=<name_of_service> --parmanent
 systemctl restart firewalld.service	
 
 ```
+
+#### *To add or remove a port*
+
+```
+firewall-cmd --add-port=20201/tcp
+firewall-cmd --remove-port=20201/tcp
+
+```
+
+#### *to block incoming traffic from an IP*
+```
+firewall-cmd --add-rich-rule=’rule family=”ipv4” source address=”192.168.0.0” reject’
+```

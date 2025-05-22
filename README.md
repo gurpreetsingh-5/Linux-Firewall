@@ -17,5 +17,5 @@ firewall-cmd  --zone=public –list-all     # to get firewall rules for a specif
 ```
 
 ```
-
+*To add or remove a service*
 ```

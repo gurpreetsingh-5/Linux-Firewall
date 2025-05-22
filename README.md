@@ -1,5 +1,5 @@
 # Linux-Firewall
-
+#### *Basic CMD*
 ```
 rpm -qa | grep firewalld #check firewall
 dnf install firewalld # if not presnt

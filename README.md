@@ -15,7 +15,7 @@ firewall-cmd  --get-active-zones         # to see the list of active zones
 firewall-cmd  --zone=public –list-all     # to get firewall rules for a specific zone
 
 ```
+### *To add or remove a service*
 
 ```
-*To add or remove a service*
 ```

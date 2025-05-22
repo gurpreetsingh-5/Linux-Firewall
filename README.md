@@ -30,7 +30,6 @@ firewall-cmd --reload # after reload add service remove autometically
 firewall-cmd --add-service=<name_of_service> --parmanent
 firewall-cmd --remove-service=<name_of_service> --parmanent
 systemctl restart firewalld.service	
-
 ```
 
 #### *To add or remove a port*
@@ -38,10 +37,31 @@ systemctl restart firewalld.service
 ```
 firewall-cmd --add-port=20201/tcp
 firewall-cmd --remove-port=20201/tcp
-
 ```
 
 #### *to block incoming traffic from an IP*
 ```
 firewall-cmd --add-rich-rule=’rule family=”ipv4” source address=”192.168.0.0” reject’
+```
+
+#### *to block outgonig traffic from an IP or URL*
+
+```
+sudo dnf install bind-utils -y
+host -t a www.fb.com
+firewall-cmd --direct --add-rule ipv4 filter OUTPUT 0 -d <ip> -j DROP
+sudo firewall-cmd --direct --add-rule ipv4 filter OUTPUT 0 -d <ip> -j DROP --permanent # for parmanent
+ping facebook.com
+
+sudo firewall-cmd --direct --remove-rule ipv4 filter OUTPUT 0 -d <ip> -j DROP
+ping facebook.com
+
+```
+
+#### *to block or unblock ICMP incoming traffic*
+
+```
+firewall-cmd --add-icmp-block-inversion
+
+firewall-cmd --remove-icmp-block-inversion
 ```
